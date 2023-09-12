@@ -139,7 +139,6 @@ file_.close()
 if page == "Welcome!":
 
     # Page info display
-    st.header('Welcome!')
     st.markdown(
         f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
         unsafe_allow_html=True,
