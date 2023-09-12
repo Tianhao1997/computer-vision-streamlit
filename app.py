@@ -127,7 +127,7 @@ with st.sidebar:
     )
 
 
-st.title('Open-source Computer Vision')
+st.title('Computer Vision Demos for IDE cources')
 
 # Load and display local gif file
 file_ = open("resources/camera-robot-eye.gif", "rb")
