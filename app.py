@@ -132,7 +132,7 @@ def gesture_classification(frame):
         cv2.putText(frame, text, (75, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 1, cv2.LINE_AA)
 
     return frame
-
+@st.cache(allow_output_mutation=True)
 def callback(frame: av.VideoFrame) -> av.VideoFrame:
     """
     Callback for hand gesture classification through webcam.
