@@ -3,7 +3,7 @@ opencv-python==4.5.4.60
 opencv-python-headless==4.5.4.60
 streamlit-option-menu==0.3.2
 timm==0.5.4
-ultralytics==8.0.145
+ultralytics
 mediapipe==0.8.10.1
 streamlit==1.12.2
 streamlit_webrtc==0.43.2
