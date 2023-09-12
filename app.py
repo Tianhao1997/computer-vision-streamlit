@@ -132,21 +132,21 @@ def gesture_classification(frame):
         cv2.putText(frame, text, (75, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 1, cv2.LINE_AA)
 
     return frame
-@st.cache(allow_output_mutation=True)
-def callback(frame: av.VideoFrame) -> av.VideoFrame:
-    """
-    Callback for hand gesture classification through webcam.
+# @st.cache(allow_output_mutation=True)
+# def callback(frame: av.VideoFrame) -> av.VideoFrame:
+#     """
+#     Callback for hand gesture classification through webcam.
 
-    Parameters:
-        frame (av.VideoFrame): video frame taken from webcam
-    Returns:
-        annotated_frame (av.VideoFrame): video frame with annotations included
-    """
+#     Parameters:
+#         frame (av.VideoFrame): video frame taken from webcam
+#     Returns:
+#         annotated_frame (av.VideoFrame): video frame with annotations included
+#     """
 
-    image = frame.to_ndarray(format="bgr24")
-    annotated_image = gesture_classification(image)
+#     image = frame.to_ndarray(format="bgr24")
+#     annotated_image = gesture_classification(image)
 
-    return av.VideoFrame.from_ndarray(annotated_image, format="bgr24")
+#     return av.VideoFrame.from_ndarray(annotated_image, format="bgr24")
 
 
 model_xgb = XGBClassifier()
