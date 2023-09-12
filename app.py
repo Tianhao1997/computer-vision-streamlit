@@ -441,39 +441,41 @@ elif page == 'Optical Character Recognition':
     st.header('Image Optical Character Recognition')
     st.markdown("![Alt Text](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)")
 
-    # User selected option for data type
-    input_type = st.radio(
-        "Use example or upload your own?",
-        ('Example', 'Upload'))
+    st.warning("Developing...")
 
-    # Provide option to use example or upload your own
-    if input_type == 'Example':
-        option = st.selectbox(
-            'Which example would you like to use?',
-            ('Quick Brown Dog', 'Receipt', 'Street Sign'))
-        uploaded_file = image_examples[option]
-    else:
-        uploaded_file = st.file_uploader("Choose a file", type=['jpg', 'jpeg', 'png'])
+    # # User selected option for data type
+    # input_type = st.radio(
+    #     "Use example or upload your own?",
+    #     ('Example', 'Upload'))
 
-    if st.button('🔥 Run!'):
-        # Run OCR
-        with st.spinner("Running optical character recognition..."):
-            annotated_image, text = image_optical_character_recognition.image_ocr(uploaded_file)
+    # # Provide option to use example or upload your own
+    # if input_type == 'Example':
+    #     option = st.selectbox(
+    #         'Which example would you like to use?',
+    #         ('Quick Brown Dog', 'Receipt', 'Street Sign'))
+    #     uploaded_file = image_examples[option]
+    # else:
+    #     uploaded_file = st.file_uploader("Choose a file", type=['jpg', 'jpeg', 'png'])
 
-        # Create image buffer and download
-        buf = BytesIO()
-        annotated_image.save(buf, format="PNG")
-        byte_im = buf.getvalue()
+    # if st.button('🔥 Run!'):
+    #     # Run OCR
+    #     with st.spinner("Running optical character recognition..."):
+    #         annotated_image, text = image_optical_character_recognition.image_ocr(uploaded_file)
 
-        # Display and provide download option for annotated image
-        st.subheader("Captioning Prediction")
-        st.image(annotated_image)
-        if text == '':
-            st.wite("No text in this image...")
-        else:
-            st.write(text)
+    #     # Create image buffer and download
+    #     buf = BytesIO()
+    #     annotated_image.save(buf, format="PNG")
+    #     byte_im = buf.getvalue()
 
-            st.download_button('Download Text', data=text, file_name='outputs/ocr_pred.txt')
+    #     # Display and provide download option for annotated image
+    #     st.subheader("Captioning Prediction")
+    #     st.image(annotated_image)
+    #     if text == '':
+    #         st.wite("No text in this image...")
+    #     else:
+    #         st.write(text)
+
+    #         st.download_button('Download Text', data=text, file_name='outputs/ocr_pred.txt')
 
 elif page == 'Image Classification':
 
@@ -481,38 +483,39 @@ elif page == 'Image Classification':
     st.header('Image Classification')
     st.markdown("![Alt Text](https://media.giphy.com/media/Zvgb12U8GNjvq/giphy.gif)")
 
-    # User selected option for data type
-    input_type = st.radio(
-        "Use example or upload your own?",
-        ('Example', 'Upload'))
+    st.warning("Developing...")
+    # # User selected option for data type
+    # input_type = st.radio(
+    #     "Use example or upload your own?",
+    #     ('Example', 'Upload'))
 
-    # Provide option to use example or upload your own
-    if input_type == 'Example':
-        option = st.selectbox(
-            'Which example would you like to use?',
-            ('Car', 'Dog', 'Tropics'))
-        uploaded_file = image_examples[option]
-    else:
-        uploaded_file = st.file_uploader("Choose a file", type=['jpg', 'jpeg', 'png'])
+    # # Provide option to use example or upload your own
+    # if input_type == 'Example':
+    #     option = st.selectbox(
+    #         'Which example would you like to use?',
+    #         ('Car', 'Dog', 'Tropics'))
+    #     uploaded_file = image_examples[option]
+    # else:
+    #     uploaded_file = st.file_uploader("Choose a file", type=['jpg', 'jpeg', 'png'])
 
-    if st.button('🔥 Run!'):
-        # Throw error if there is no file
-        if uploaded_file is None:
-            st.error("No file uploaded yet.")
-        else:
-            # Run classification
-            with st.spinner("Running classification..."):
-                img = Image.open(uploaded_file)
-                preds = image_classifier.classify(img)
+    # if st.button('🔥 Run!'):
+    #     # Throw error if there is no file
+    #     if uploaded_file is None:
+    #         st.error("No file uploaded yet.")
+    #     else:
+    #         # Run classification
+    #         with st.spinner("Running classification..."):
+    #             img = Image.open(uploaded_file)
+    #             preds = image_classifier.classify(img)
 
-            # Display image
-            st.subheader("Classification Predictions")
-            st.image(img)
-            fig = px.bar(preds.sort_values("Pred_Prob", ascending=True), x='Pred_Prob', y='Class', orientation='h')
-            st.write(fig)
+    #         # Display image
+    #         st.subheader("Classification Predictions")
+    #         st.image(img)
+    #         fig = px.bar(preds.sort_values("Pred_Prob", ascending=True), x='Pred_Prob', y='Class', orientation='h')
+    #         st.write(fig)
 
-            # Provide download option for predictions
-            st.write("")
-            csv = preds.to_csv(index=False).encode('utf-8')
-            st.download_button('Download Predictions',csv,
-                               file_name='classification_predictions.csv')
+    #         # Provide download option for predictions
+    #         st.write("")
+    #         csv = preds.to_csv(index=False).encode('utf-8')
+    #         st.download_button('Download Predictions',csv,
+    #                            file_name='classification_predictions.csv')
