@@ -16,7 +16,7 @@ class VideoObjectDetection:
             model: model for detecting objects
         """
 
-        self.model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
+        self.model = torch.hub.load('ultralytics/yolov5:v7.0', 'yolov5s', pretrained=True)
 
     def prediction_label(self, image_np):
         """
