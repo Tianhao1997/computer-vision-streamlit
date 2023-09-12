@@ -162,46 +162,6 @@ if page == "Welcome!":
         """
     )
 
-    st.subheader("Introduction")
-    st.write("""
-        Hello! This application is a continuation of my last space that you can access here: [Open-source NLP tool](https://huggingface.co/spaces/miesnerjacob/Multi-task-NLP). 
-        Utilizing a range of open-source Python libraries programmers have the ability to stand up Machine Learning applications 
-        easier than ever before. Pre-trained Machine Learning models' mass availability enabled Data Scientists to 
-        avoid focusing on building complex Neural Networks from scratch for every project. Now Data Scientists can put more
-        attention into solving domain specific problems by fine-tuning these model and applying them to business use-cases. 
-        This application shows how easy it can be to implement Computer Vision on-demand within your application.   
-
-        Utilizing this tool you will be able to perform a few Computer Vision Tasks. All you need to do is select your task, select or upload your input, and hit the start button!
-        
-        * This application has the ability to take both Images and Videos as input 
-
-        * This application currently supports:
-            * Object Detection
-            * Facial Emotion Recognition
-            * Image and Video Classification
-            * Optical Character Recognition
-
-        More features may be added in the future including additional Computer Vision tasks and demos, depending on community feedback. 
-        Please reach out to me at miesner.jacob@gmail.com or at my Linkedin page listed below if you have ideas or suggestions for improvement.
-
-        If you would like to contribute yourself, feel free to fork the Github repository listed below and submit a merge request.
-        """
-             )
-    st.subheader("Notes")
-    st.write(
-        """
-        * If you are interested viewing the source code for this project or any of my other works you can view them here:
-        
-           [Project Github](https://github.com/MiesnerJacob/computer-vision-streamlit)
-
-           [Jacob Miesner's Github](https://github.com/MiesnerJacob)
-
-           [Jacob Miesner's Linkedin](https://www.linkedin.com/in/jacob-miesner-885050125/)
-
-           [Jacob Miesner's Website](https://www.jacobmiesner.com)  
-        """
-    )
-
 if page == "Object Detection":
 
     # Page info display
